@@ -14,6 +14,27 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+const request = (url,data = {},method="GET") => {
+  return new Promise((resovle, reject) => {
+    wx.request({
+      url,
+      timeout:3000,
+      method,
+      data,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        resovle(res.data)
+      },
+      fail() {
+        reject()
+      }
+    })
+  });
+}
+
 module.exports = {
-  formatTime
+  formatTime,
+  request
 }
