@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/uknowzheng/WechatApp-HackerNewsPlus/issues"
   },
-  "homepage": "https://github.com/uknowzheng/WechatApp-HackerNewsPlus#readme",
-  "dependencies": {
-    "weui-miniprogram": "^1.0.7"
-  }
+  "homepage": "https://github.com/uknowzheng/WechatApp-HackerNewsPlus#readme"
 }

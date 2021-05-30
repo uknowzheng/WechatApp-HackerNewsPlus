@@ -1,34 +1,37 @@
-// pages/list/list.js
+// pages/detail/detail.js
 import HackerNewsService from '../../utils/hacker-news-api-service'
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    message:"hello",
-    listData:[]
+    title:null,
+    detailUrl:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
+    const {id} = options;
     let api = new HackerNewsService();
-    const list  = await api.getListByType();
-    const firstPageData = list.splice(0,30);
-    console.log(firstPageData)
-    const result = await (Promise.all(firstPageData.map((item)=>{
-      return api.getItemByItemId(item);
-    })));
-    console.log(result)
+    const data  = await api.getItemByItemId(id);
+    const {title,url} = data;
     this.setData({
-      message:"hello data",
-      list:result
+      title,
+      detailUrl:"https://www.uknowzheng.world"
     });
-    // console.log(this.data.listData)
-    // console.log(result)
+
+// by: "tosh"
+// descendants: 0
+// id: 27332686
+// score: 1
+// time: 1622376919
+// title: "Let's Play with FFT"
+// type: "story"
+// url: "https://twitter.com/theshawwn/status/1398796224921321472"
+    console.log(data)
   },
 
   /**

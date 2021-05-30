@@ -1,7 +1,7 @@
 <view class="page">
   <mp-cells title="最新HackerNews">
     <block wx:for="{{list}}" wx:key="id" wx:for-item="item">
-      <mp-cell link>
+      <mp-cell link url="/pages/detail/detail?id={{item.id}}">
         <view style="display: inline-block; vertical-align: middle">{{item.title}}</view>
       </mp-cell>
     </block>
